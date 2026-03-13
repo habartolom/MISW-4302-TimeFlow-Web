@@ -1,37 +1,47 @@
 <div class="login-page">
   <div class="login-card">
-    <div class="login-card__logo-wrap">
-      <img src="timer-icon.svg" alt="TimeFlow" class="login-card__logo-img" />
+
+    <div class="logo-wrap">
+      <img src="timer-icon.svg" alt="TimeFlow" class="logo-img" />
     </div>
-    <h1 class="login-card__title">TIMEFLOW</h1>
-    <p class="login-card__subtitle">Inicia sesión en tu cuenta</p>
 
-    <form class="login-card__form" (ngSubmit)="onLogin()">
-      <label class="field-label">Correo electrónico</label>
-      <mat-form-field appearance="outline" class="login-card__field">
-        <input matInput type="email" placeholder="usuario@correo.com" [(ngModel)]="email" name="email" />
-      </mat-form-field>
+    <h1 class="card-title">TIMEFLOW</h1>
+    <p class="card-subtitle">Inicia sesión en tu cuenta</p>
 
-      <label class="field-label" style="margin-top:8px">Contraseña</label>
-      <mat-form-field appearance="outline" class="login-card__field">
-        <input matInput [type]="hidePassword ? 'password' : 'text'" [(ngModel)]="password" name="password" />
-        <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
-          <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
-        </button>
-      </mat-form-field>
+    <form class="card-form" (ngSubmit)="onLogin()">
+      <div class="field-group">
+        <label class="field-label">Correo electrónico</label>
+        <input class="field-input" type="email" placeholder="usuario@correo.com" [(ngModel)]="email" name="email" />
+      </div>
 
-      <span class="login-card__forgot">¿Olvidaste tu contraseña?</span>
+      <div class="field-group">
+        <label class="field-label">Contraseña</label>
+        <div class="input-wrap">
+          <input class="field-input" [type]="hidePassword ? 'password' : 'text'" [(ngModel)]="password" name="password" />
+          <button type="button" class="input-eye" (click)="hidePassword = !hidePassword">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              @if (hidePassword) {
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+                <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+                <line x1="1" y1="1" x2="23" y2="23"/>
+              } @else {
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              }
+            </svg>
+          </button>
+        </div>
+      </div>
 
-      <button mat-flat-button class="login-card__btn-login" type="submit">
-        INICIAR SESIÓN
-      </button>
+      <span class="forgot-link">¿Olvidaste tu contraseña?</span>
+
+      <button mat-flat-button class="btn-login" type="submit">INICIAR SESIÓN</button>
     </form>
 
-    <div class="login-card__footer">
-      <p class="login-card__footer-text">¿No tienes cuenta?</p>
-      <button mat-stroked-button class="login-card__btn-register" routerLink="/register">
-        CREAR CUENTA
-      </button>
+    <div class="card-footer">
+      <p class="footer-text">¿No tienes cuenta?</p>
+      <button mat-stroked-button class="btn-register" routerLink="/register">CREAR CUENTA</button>
     </div>
+
   </div>
 </div>

@@ -1,30 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-login',
-  imports: [
-    RouterLink,
-    FormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatIconModule,
-  ],
+  imports: [RouterLink, FormsModule, MatButtonModule],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
 export class Login {
+  private router = inject(Router);
+
   email = '';
   password = '';
   hidePassword = true;
-
-  constructor(private router: Router) {}
 
   onLogin() {
     this.router.navigate(['/dashboard']);

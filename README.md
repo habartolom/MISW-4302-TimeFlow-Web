@@ -1,59 +1,74 @@
-# TimeflowWeb
+# TimeFlow Web
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.2.
+Maquetación web de **TimeFlow**, aplicación para gestión y control de tiempo en presentaciones profesionales. Permite configurar secciones, revisar el historial de sesiones y ajustar alertas desde una interfaz web moderna.
 
-## Development server
+---
 
-To start a local development server, run:
+## Demo
 
+La aplicación está publicada en GitHub Pages:
+
+**[https://habartolom.github.io/MISW-4302-TimeFlow-Web/](https://habartolom.github.io/MISW-4302-TimeFlow-Web/)**
+
+---
+
+## Rutas disponibles
+
+| Ruta | Vista | Descripción |
+|------|-------|-------------|
+| `/` | — | Redirige automáticamente a `/login` |
+| `/login` | Inicio de sesión | Acceso con correo y contraseña |
+| `/register` | Crear cuenta | Registro de usuario nuevo |
+| `/dashboard` | Dashboard | Estadísticas generales, evolución temporal y sesiones recientes |
+| `/historial` | Historial de Sesiones | Listado de sesiones con filtros por fecha y estado |
+| `/asignar-tiempo` | Asignar Tiempo | Configuración de duración por sección de presentación |
+| `/alertas` | Configuración de Alertas | Activación de alertas y tipo de notificación por defecto |
+| `/cuenta` | Mi Cuenta | Perfil de usuario y datos de acceso |
+
+---
+
+## Correr el proyecto en local
+
+### Requisitos previos
+
+- **Node.js** v18 o superior — [descargar](https://nodejs.org)
+- **npm** v9 o superior (incluido con Node.js)
+
+Verifica tu instalación:
 ```bash
-ng serve
+node -v
+npm -v
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Pasos
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+**1. Clona el repositorio**
 ```bash
-ng generate component component-name
+git clone https://github.com/habartolom/MISW-4302-TimeFlow-Web.git
+cd MISW-4302-TimeFlow-Web
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+**2. Instala las dependencias**
 ```bash
-ng generate --help
+npm install
 ```
 
-## Building
-
-To build the project run:
-
+**3. Inicia el servidor de desarrollo**
 ```bash
-ng build
+npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+**4. Abre el navegador**
 
-## Running unit tests
+Navega a [`http://localhost:4200`](http://localhost:4200). La aplicación se recarga automáticamente al guardar cambios en el código.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+## Stack tecnológico
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+| Tecnología | Versión |
+|------------|---------|
+| Angular | 21.2 |
+| Angular Material | 21.2 |
+| TypeScript | 5.9 |
+| Inter (fuente) | Google Fonts |

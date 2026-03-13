@@ -4,7 +4,6 @@
   overflow: hidden;
 }
 
-/* ── Sidebar ── */
 .sidebar {
   width: var(--sidebar-width);
   min-width: var(--sidebar-width);
@@ -15,7 +14,6 @@
   flex-shrink: 0;
 }
 
-/* Brand / Logo area */
 .sidebar__brand {
   display: flex;
   align-items: center;
@@ -46,7 +44,6 @@
   font-weight: 700;
 }
 
-/* Navigation */
 .sidebar__nav {
   flex: 1;
   padding-top: 22px;
@@ -97,7 +94,6 @@
   font-weight: 600;
 }
 
-/* Footer */
 .sidebar__footer {
   height: 69.5px;
   min-height: 69.5px;
@@ -120,7 +116,6 @@
   text-decoration: none;
 }
 
-/* ── Main content ── */
 .content {
   flex: 1;
   overflow-y: auto;

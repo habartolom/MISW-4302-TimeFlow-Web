@@ -1,27 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-register',
-  imports: [
-    RouterLink,
-    FormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatIconModule,
-  ],
+  imports: [RouterLink, FormsModule, MatButtonModule],
   templateUrl: './register.html',
   styleUrl: './register.css',
 })
 export class Register {
+  private router = inject(Router);
+
   nombre = '';
   email = '';
   password = '';
@@ -29,8 +19,6 @@ export class Register {
   acceptTerms = false;
   hidePassword = true;
   hideConfirm = true;
-
-  constructor(private router: Router) {}
 
   onRegister() {
     this.router.navigate(['/dashboard']);

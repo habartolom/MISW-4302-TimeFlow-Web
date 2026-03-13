@@ -29,7 +29,6 @@
   padding: 0 16px !important;
 }
 
-/* Filter row */
 .filters {
   display: flex;
   align-items: center;
@@ -55,7 +54,6 @@
 .filter-input::placeholder { color: var(--color-label); }
 .filter-input:focus { border-color: var(--color-heading); }
 
-/* Date picker wrapper — styled to match filter-select */
 .filter-date-wrap {
   position: relative;
   width: 113px;
@@ -89,7 +87,6 @@
   pointer-events: none;
 }
 
-/* Hidden input that mat-datepicker connects to */
 .filter-date-input {
   position: absolute;
   width: 0;
@@ -120,7 +117,6 @@
   box-sizing: border-box;
 }
 
-/* Table */
 .table-wrap {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -185,7 +181,6 @@
   line-height: 1 !important;
 }
 
-/* Pagination — centered */
 .pagination {
   display: flex;
   align-items: center;

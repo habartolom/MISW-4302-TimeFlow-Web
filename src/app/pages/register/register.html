@@ -1,51 +1,73 @@
 <div class="register-page">
   <div class="register-card">
-    <div class="register-card__header">
-      <h1 class="register-card__title">TIMEFLOW</h1>
-      <span class="register-card__badge">NUEVO</span>
+
+    <div class="card-header">
+      <h1 class="card-title">TIMEFLOW</h1>
+      <span class="card-badge">NUEVO</span>
     </div>
-    <p class="register-card__subtitle">Crea tu cuenta nueva</p>
 
-    <form class="register-card__form" (ngSubmit)="onRegister()">
-      <label class="field-label">Nombre completo</label>
-      <mat-form-field appearance="outline" class="register-card__field">
-        <input matInput [(ngModel)]="nombre" name="nombre" />
-      </mat-form-field>
+    <p class="card-subtitle">Crea tu cuenta nueva</p>
 
-      <label class="field-label" style="margin-top:8px">Correo electrónico</label>
-      <mat-form-field appearance="outline" class="register-card__field">
-        <input matInput type="email" [(ngModel)]="email" name="email" />
-      </mat-form-field>
-
-      <label class="field-label" style="margin-top:8px">Contraseña</label>
-      <mat-form-field appearance="outline" class="register-card__field">
-        <input matInput [type]="hidePassword ? 'password' : 'text'" [(ngModel)]="password" name="password" />
-        <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
-          <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
-        </button>
-      </mat-form-field>
-
-      <label class="field-label" style="margin-top:8px">Confirmar contraseña</label>
-      <mat-form-field appearance="outline" class="register-card__field">
-        <input matInput [type]="hideConfirm ? 'password' : 'text'" [(ngModel)]="confirmPassword" name="confirmPassword" />
-        <button mat-icon-button matSuffix type="button" (click)="hideConfirm = !hideConfirm">
-          <mat-icon>{{ hideConfirm ? 'visibility_off' : 'visibility' }}</mat-icon>
-        </button>
-      </mat-form-field>
-
-      <div class="register-card__terms">
-        <mat-checkbox [(ngModel)]="acceptTerms" name="terms">
-          <span style="font-size:13px;font-weight:500;color:var(--color-secondary)">Acepto los términos y condiciones</span>
-        </mat-checkbox>
+    <form class="card-form" (ngSubmit)="onRegister()">
+      <div class="field-group">
+        <label class="field-label">Nombre completo</label>
+        <input class="field-input" [(ngModel)]="nombre" name="nombre" />
       </div>
 
-      <button mat-flat-button class="register-card__btn-create" type="submit">
-        CREAR CUENTA
-      </button>
+      <div class="field-group">
+        <label class="field-label">Correo electrónico</label>
+        <input class="field-input" type="email" [(ngModel)]="email" name="email" />
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Contraseña</label>
+        <div class="input-wrap">
+          <input class="field-input" [type]="hidePassword ? 'password' : 'text'" [(ngModel)]="password" name="password" />
+          <button type="button" class="input-eye" (click)="hidePassword = !hidePassword">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              @if (hidePassword) {
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+                <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+                <line x1="1" y1="1" x2="23" y2="23"/>
+              } @else {
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              }
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Confirmar contraseña</label>
+        <div class="input-wrap">
+          <input class="field-input" [type]="hideConfirm ? 'password' : 'text'" [(ngModel)]="confirmPassword" name="confirmPassword" />
+          <button type="button" class="input-eye" (click)="hideConfirm = !hideConfirm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              @if (hideConfirm) {
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+                <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+                <line x1="1" y1="1" x2="23" y2="23"/>
+              } @else {
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              }
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="terms-row">
+        <input type="checkbox" class="terms-check" id="terms" [(ngModel)]="acceptTerms" name="terms" />
+        <label class="terms-label" for="terms">Acepto los términos y condiciones</label>
+      </div>
+
+      <button mat-flat-button class="btn-create" type="submit">CREAR CUENTA</button>
     </form>
 
-    <p class="register-card__login-text">
+    <p class="login-link">
       ¿Ya tienes cuenta? — <a routerLink="/login">Iniciar sesión</a>
     </p>
+
   </div>
 </div>

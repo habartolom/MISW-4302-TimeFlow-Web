@@ -25,7 +25,6 @@
   color: var(--color-muted);
 }
 
-/* ── Stats row ── */
 .stats-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -59,7 +58,6 @@
   line-height: 42px;
 }
 
-/* ── Charts rows ── */
 .charts-row {
   display: grid;
   gap: 16px;
@@ -88,7 +86,6 @@
   flex-shrink: 0;
 }
 
-/* ── Line chart ── */
 .line-chart {
   display: flex;
   gap: 8px;
@@ -126,7 +123,6 @@
   margin-top: 4px;
 }
 
-/* ── Sessions list ── */
 .sessions-list {
   display: flex;
   flex-direction: column;
@@ -168,7 +164,6 @@
 .session-row__status--ok  { color: var(--color-label); }
 .session-row__status--exc { color: var(--color-subtle); }
 
-/* ── Bar chart ── */
 .bar-chart-wrap {
   display: flex;
   align-items: flex-end;
@@ -201,7 +196,6 @@
   margin-top: 4px;
 }
 
-/* ── Monthly comparison ── */
 .monthly-list {
   display: flex;
   flex-direction: column;

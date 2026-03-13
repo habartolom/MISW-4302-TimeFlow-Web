@@ -12,35 +12,35 @@ export class MainLayout {
     {
       group: 'PRINCIPAL',
       items: [
-        { label: 'Dashboard', route: '/dashboard', icon: 'dashboard' },
-        { label: 'Historial', route: '/historial', icon: 'history' },
-        { label: 'Asignar Tiempo', route: '/asignar-tiempo', icon: 'timer' },
-        { label: 'Alertas', route: '/alertas', icon: 'notifications' },
-        { label: 'Plantillas', route: '/plantillas', icon: 'description' },
+        { label: 'Dashboard',      route: '/dashboard' },
+        { label: 'Historial',      route: '/historial' },
+        { label: 'Asignar Tiempo', route: '/asignar-tiempo' },
+        { label: 'Alertas',        route: '/alertas' },
+        { label: 'Plantillas',     route: null },
       ]
     },
     {
       group: 'ANÁLISIS',
       items: [
-        { label: 'Gráficos', route: '/graficos', icon: 'bar_chart' },
-        { label: 'Exportar', route: '/exportar', icon: 'file_download' },
-        { label: 'Insights', route: '/insights', icon: 'lightbulb' },
-        { label: 'Metas', route: '/metas', icon: 'flag' },
-        { label: 'Por Tipo', route: '/por-tipo', icon: 'category' },
+        { label: 'Gráficos',      route: null },
+        { label: 'Exportar',      route: null },
+        { label: 'Insights',      route: null },
+        { label: 'Metas',         route: null },
+        { label: 'Por Tipo',      route: null },
       ]
     },
     {
       group: 'AVANZADO',
       items: [
-        { label: 'Integraciones', route: '/integraciones', icon: 'extension' },
-        { label: 'API', route: '/api', icon: 'code' },
-        { label: 'Equipo', route: '/equipo', icon: 'group' },
+        { label: 'Integraciones', route: null },
+        { label: 'API',           route: null },
+        { label: 'Equipo',        route: null },
       ]
     },
     {
       group: 'CUENTA',
       items: [
-        { label: 'Mi Cuenta', route: '/cuenta', icon: 'person' },
+        { label: 'Mi Cuenta', route: '/cuenta' },
       ]
     }
   ];

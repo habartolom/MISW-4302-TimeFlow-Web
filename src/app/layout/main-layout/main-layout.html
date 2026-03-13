@@ -10,11 +10,11 @@
         <div class="sidebar__group">
           <span class="sidebar__group-label">{{ group.group }}</span>
           @for (item of group.items; track item.route) {
-            <a
-              class="sidebar__item"
-              [routerLink]="item.route"
-              routerLinkActive="sidebar__item--active"
-            >{{ item.label }}</a>
+            @if (item.route) {
+            <a class="sidebar__item" [routerLink]="item.route" routerLinkActive="sidebar__item--active">{{ item.label }}</a>
+          } @else {
+            <span class="sidebar__item">{{ item.label }}</span>
+          }
           }
         </div>
       }

@@ -1,10 +1,17 @@
-.page { padding: 28px; }
+.page {
+  padding: 28px;
+}
+
+.content {
+  max-width: 616px;
+  margin: 0 auto;
+}
 
 .page__title {
   font-size: 24px;
   font-weight: 800;
   color: var(--color-heading);
-  margin: 0 0 20px;
+  margin: 0 0 28px;
 }
 
 .account-card {
@@ -12,16 +19,14 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
-  max-width: 616px;
-  padding: 28px;
+  padding: 29px;
 }
 
-/* Profile header */
 .profile-header {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--color-border);
 }
@@ -54,15 +59,18 @@
   margin-top: 2px;
 }
 
-/* Form grid */
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px 20px;
-  margin-bottom: 20px;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
-.form-group { display: flex; flex-direction: column; gap: 5px; }
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 
 .form-label {
   font-size: 13px;
@@ -82,11 +90,11 @@
   color: var(--color-heading);
   font-family: 'Inter', sans-serif;
   outline: none;
+  box-sizing: border-box;
 }
 
 .form-input:focus { border-color: var(--color-heading); }
 
-/* Actions */
 .account-actions {
   display: flex;
   gap: 10px;
@@ -101,7 +109,8 @@
   font-weight: 700 !important;
   letter-spacing: 0.52px !important;
   height: 41.5px !important;
-  width: 179px !important;
+  padding: 0 20px !important;
+  white-space: nowrap !important;
 }
 
 .btn-logout {
@@ -113,5 +122,6 @@
   font-weight: 600 !important;
   letter-spacing: 0.52px !important;
   height: 41.5px !important;
-  width: 157px !important;
+  padding: 0 20px !important;
+  white-space: nowrap !important;
 }

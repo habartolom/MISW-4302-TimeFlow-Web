@@ -1,0 +1,117 @@
+.page { padding: 28px; }
+
+.page__title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-heading);
+  margin: 0 0 20px;
+}
+
+.account-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  max-width: 616px;
+  padding: 28px;
+}
+
+/* Profile header */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 28px;
+  background: var(--color-border-input);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-label);
+  flex-shrink: 0;
+}
+
+.profile-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-heading);
+  line-height: 24px;
+}
+
+.profile-meta {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-subtle);
+  margin-top: 2px;
+}
+
+/* Form grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+  margin-bottom: 20px;
+}
+
+.form-group { display: flex; flex-direction: column; gap: 5px; }
+
+.form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-label);
+}
+
+.form-input {
+  width: 100%;
+  height: 39px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-base);
+  padding: 8px 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-heading);
+  font-family: 'Inter', sans-serif;
+  outline: none;
+}
+
+.form-input:focus { border-color: var(--color-heading); }
+
+/* Actions */
+.account-actions {
+  display: flex;
+  gap: 10px;
+  padding-top: 8px;
+}
+
+.btn-save {
+  background: var(--color-heading) !important;
+  color: #fff !important;
+  border-radius: var(--radius-base) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.52px !important;
+  height: 41.5px !important;
+  width: 179px !important;
+}
+
+.btn-logout {
+  background: var(--color-surface) !important;
+  color: var(--color-label) !important;
+  border: 1px solid var(--color-border-input) !important;
+  border-radius: var(--radius-base) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.52px !important;
+  height: 41.5px !important;
+  width: 157px !important;
+}

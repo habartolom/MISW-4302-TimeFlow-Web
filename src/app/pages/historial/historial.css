@@ -1,0 +1,181 @@
+.page { padding: 28px; }
+
+.page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.page__title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-heading);
+  margin: 0;
+}
+
+.btn-export {
+  background: var(--color-heading) !important;
+  color: #fff !important;
+  border-radius: var(--radius-base) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.52px !important;
+  height: 37.5px !important;
+  padding: 0 16px !important;
+}
+
+/* Filter row */
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.filter-input {
+  width: 180px;
+  height: 35.5px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-base);
+  padding: 7px 12px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-label);
+  font-family: 'Inter', sans-serif;
+  outline: none;
+}
+
+.filter-input::placeholder { color: var(--color-label); }
+.filter-input:focus { border-color: var(--color-heading); }
+
+.filter-select {
+  width: 113px;
+  height: 36px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-base);
+  padding: 7px 12px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-label);
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23374151' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  cursor: pointer;
+}
+
+/* Table */
+.table-wrap {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.data-table { width: 100%; border-collapse: collapse; }
+
+.data-table thead tr {
+  background: var(--color-gray-50);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.data-table thead th {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-subtle);
+  letter-spacing: 0.36px;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  text-align: left;
+  height: 38.5px;
+}
+
+.data-table tbody tr {
+  border-bottom: 1px solid var(--color-bg);
+  height: 53px;
+}
+
+.data-table tbody tr:last-child { border-bottom: none; }
+
+.data-table td {
+  padding: 0 16px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-subtle);
+  vertical-align: middle;
+}
+
+.td-name {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: var(--color-heading) !important;
+}
+
+.td-duration { color: var(--color-label) !important; }
+
+.btn-ver {
+  background: var(--color-surface) !important;
+  color: var(--color-label) !important;
+  border: 1px solid var(--color-border-input) !important;
+  border-radius: var(--radius-base) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  height: 28px !important;
+  width: 40px !important;
+  min-width: unset !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pag-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-base);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-label);
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.pag-btn--active {
+  background: var(--color-heading);
+  border-color: var(--color-heading);
+  color: #fff;
+  font-weight: 700;
+}
+
+.pag-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 32px;
+  font-size: 16px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.pag-arrow--prev { color: var(--color-border-input); }
+.pag-arrow--next { color: var(--color-label); }

@@ -1,0 +1,37 @@
+<div class="login-page">
+  <div class="login-card">
+    <div class="login-card__logo-wrap">
+      <img src="timer-icon.svg" alt="TimeFlow" class="login-card__logo-img" />
+    </div>
+    <h1 class="login-card__title">TIMEFLOW</h1>
+    <p class="login-card__subtitle">Inicia sesión en tu cuenta</p>
+
+    <form class="login-card__form">
+      <label class="field-label">Correo electrónico</label>
+      <mat-form-field appearance="outline" class="login-card__field">
+        <input matInput type="email" placeholder="usuario@correo.com" [(ngModel)]="email" name="email" />
+      </mat-form-field>
+
+      <label class="field-label" style="margin-top:8px">Contraseña</label>
+      <mat-form-field appearance="outline" class="login-card__field">
+        <input matInput [type]="hidePassword ? 'password' : 'text'" [(ngModel)]="password" name="password" />
+        <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
+          <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <span class="login-card__forgot">¿Olvidaste tu contraseña?</span>
+
+      <button mat-flat-button class="login-card__btn-login" type="submit">
+        INICIAR SESIÓN
+      </button>
+    </form>
+
+    <div class="login-card__footer">
+      <p class="login-card__footer-text">¿No tienes cuenta?</p>
+      <button mat-stroked-button class="login-card__btn-register" routerLink="/register">
+        CREAR CUENTA
+      </button>
+    </div>
+  </div>
+</div>

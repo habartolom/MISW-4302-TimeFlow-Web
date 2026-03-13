@@ -1,0 +1,128 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── Sidebar ── */
+.sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  background-color: var(--color-sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+/* Brand / Logo area */
+.sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 69px;
+  min-height: 69px;
+  padding-left: 20px;
+  border-bottom: 1px solid var(--color-sidebar-divider);
+}
+
+.sidebar__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-nav-active);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.sidebar__title {
+  color: var(--color-nav-inactive);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Navigation */
+.sidebar__nav {
+  flex: 1;
+  padding-top: 22px;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar__group {}
+
+.sidebar__group-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  padding: 0 0 4px 20px;
+  display: block;
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  width: 225px;
+  height: 35.5px;
+  padding: 0 10px 0 10px;
+  margin-left: 15px;
+  color: var(--color-nav-inactive);
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: var(--radius-base);
+  border: 1px solid transparent;
+  transition: background 0.12s, color 0.12s;
+}
+
+.sidebar__item:hover {
+  background-color: rgba(255,255,255,0.06);
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar__item--active {
+  background-color: var(--color-nav-active);
+  border-color: var(--color-nav-active-border);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Footer */
+.sidebar__footer {
+  height: 69.5px;
+  min-height: 69.5px;
+  border-top: 1px solid var(--color-sidebar-divider);
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.sidebar__logout {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-secondary);
+  text-decoration: none;
+  transition: color 0.12s;
+}
+
+.sidebar__logout:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ── Main content ── */
+.content {
+  flex: 1;
+  overflow-y: auto;
+  background-color: var(--color-bg);
+}

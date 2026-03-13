@@ -1,0 +1,51 @@
+<div class="register-page">
+  <div class="register-card">
+    <div class="register-card__header">
+      <h1 class="register-card__title">TIMEFLOW</h1>
+      <span class="register-card__badge">NUEVO</span>
+    </div>
+    <p class="register-card__subtitle">Crea tu cuenta nueva</p>
+
+    <form class="register-card__form">
+      <label class="field-label">Nombre completo</label>
+      <mat-form-field appearance="outline" class="register-card__field">
+        <input matInput [(ngModel)]="nombre" name="nombre" />
+      </mat-form-field>
+
+      <label class="field-label" style="margin-top:8px">Correo electrónico</label>
+      <mat-form-field appearance="outline" class="register-card__field">
+        <input matInput type="email" [(ngModel)]="email" name="email" />
+      </mat-form-field>
+
+      <label class="field-label" style="margin-top:8px">Contraseña</label>
+      <mat-form-field appearance="outline" class="register-card__field">
+        <input matInput [type]="hidePassword ? 'password' : 'text'" [(ngModel)]="password" name="password" />
+        <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword">
+          <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <label class="field-label" style="margin-top:8px">Confirmar contraseña</label>
+      <mat-form-field appearance="outline" class="register-card__field">
+        <input matInput [type]="hideConfirm ? 'password' : 'text'" [(ngModel)]="confirmPassword" name="confirmPassword" />
+        <button mat-icon-button matSuffix type="button" (click)="hideConfirm = !hideConfirm">
+          <mat-icon>{{ hideConfirm ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div class="register-card__terms">
+        <mat-checkbox [(ngModel)]="acceptTerms" name="terms">
+          <span style="font-size:13px;font-weight:500;color:var(--color-secondary)">Acepto los términos y condiciones</span>
+        </mat-checkbox>
+      </div>
+
+      <button mat-flat-button class="register-card__btn-create" type="submit">
+        CREAR CUENTA
+      </button>
+    </form>
+
+    <p class="register-card__login-text">
+      ¿Ya tienes cuenta? — <a routerLink="/login">Iniciar sesión</a>
+    </p>
+  </div>
+</div>

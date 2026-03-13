@@ -1,0 +1,60 @@
+<div class="page">
+  <div class="page__header">
+    <h1 class="page__title">Historial de Sesiones</h1>
+    <button mat-flat-button class="btn-export">EXPORTAR</button>
+  </div>
+
+  <div class="filters">
+    <input class="filter-input" placeholder="Buscar..." [(ngModel)]="search" />
+    <select class="filter-select" [(ngModel)]="dateFilter">
+      <option value="">Fecha</option>
+      <option value="feb">Febrero</option>
+      <option value="ene">Enero</option>
+    </select>
+    <select class="filter-select" [(ngModel)]="statusFilter">
+      <option value="">Estado</option>
+      <option value="a-tiempo">A tiempo</option>
+      <option value="excedido">Excedido</option>
+    </select>
+  </div>
+
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Presentación</th>
+          <th>Fecha</th>
+          <th>Duración</th>
+          <th>Secciones</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (s of sessions; track s.name) {
+          <tr>
+            <td class="td-name">{{ s.name }}</td>
+            <td>{{ s.date }}</td>
+            <td class="td-duration">{{ s.duration }}</td>
+            <td>{{ s.sections }}</td>
+            <td>
+              <span class="badge" [class.badge--success]="s.status === 'A tiempo'" [class.badge--muted]="s.status === 'Excedido'">
+                {{ s.status }}
+              </span>
+            </td>
+            <td>
+              <button mat-flat-button class="btn-ver">Ver</button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination">
+    <button class="pag-arrow pag-arrow--prev">←</button>
+    <button class="pag-btn pag-btn--active">1</button>
+    <button class="pag-btn">2</button>
+    <button class="pag-arrow pag-arrow--next">→</button>
+  </div>
+</div>

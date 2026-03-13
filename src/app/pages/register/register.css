@@ -1,0 +1,88 @@
+.register-page {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-modal);
+  width: 360px;
+  padding: 28px 37px;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  width: 286px;
+}
+
+.register-card__title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-heading);
+  margin: 0;
+  letter-spacing: -0.30px;
+}
+
+.register-card__badge {
+  background-color: var(--color-heading);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.80px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: var(--radius-base);
+}
+
+.register-card__subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-subtle);
+  margin: 0 0 16px;
+}
+
+.register-card__form {
+  width: 286px;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-card__field {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.register-card__terms {
+  margin: 8px 0 14px;
+  font-size: 13px;
+}
+
+.register-card__btn-create {
+  width: 286px;
+  height: 43px !important;
+  background: var(--color-heading) !important;
+  color: #fff !important;
+  border-radius: var(--radius-base) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.56px !important;
+  text-transform: uppercase !important;
+}
+
+.register-card__login-text {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-secondary);
+  margin: 16px 0 0;
+}

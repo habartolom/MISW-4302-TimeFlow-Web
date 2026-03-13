@@ -1,1 +1,142 @@
-/* You can add global styles to this file, and also import other style files */
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-bg);
+}
+
+a { color: var(--color-label); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Status badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 22.5px;
+  padding: 0 8px;
+  border-radius: var(--radius-base);
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+.badge--success { background-color: var(--color-nav-active); }
+.badge--muted   { background-color: var(--color-subtle); }
+
+/* Page layout shared */
+.page {
+  padding: 28px 28px 28px 28px;
+  min-height: 100%;
+  background: var(--color-bg);
+}
+
+.page__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.page__title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-heading);
+  margin: 0;
+  line-height: 36px;
+}
+
+/* Shared card */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+/* Field label */
+.field-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-label);
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Primary button */
+.btn-primary {
+  background: var(--color-heading) !important;
+  color: #fff !important;
+  border-radius: var(--radius-base) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.52px !important;
+  text-transform: uppercase !important;
+  height: 41.5px !important;
+  border: none !important;
+}
+
+/* Secondary button */
+.btn-secondary {
+  background: var(--color-surface) !important;
+  color: var(--color-label) !important;
+  border: 1px solid var(--color-border-input) !important;
+  border-radius: var(--radius-base) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.52px !important;
+  text-transform: uppercase !important;
+  height: 41.5px !important;
+}
+
+/* Small action button */
+.btn-sm {
+  background: var(--color-surface) !important;
+  color: var(--color-label) !important;
+  border: 1px solid var(--color-border-input) !important;
+  border-radius: var(--radius-base) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  height: 28px !important;
+  min-width: 40px !important;
+  line-height: 1 !important;
+}
+
+/* Override Angular Material form field to match Figma */
+.mat-mdc-form-field {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.mat-mdc-text-field-wrapper {
+  border-radius: var(--radius-base) !important;
+}
+
+.mdc-text-field--outlined .mdc-notched-outline__leading,
+.mdc-text-field--outlined .mdc-notched-outline__notch,
+.mdc-text-field--outlined .mdc-notched-outline__trailing {
+  border-color: var(--color-border-input) !important;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+  border-color: var(--color-border-input) !important;
+}
+
+.mat-mdc-input-element {
+  font-size: 14px !important;
+  color: var(--color-heading) !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.mat-mdc-form-field-infix {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  min-height: 39px !important;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  display: none;
+}

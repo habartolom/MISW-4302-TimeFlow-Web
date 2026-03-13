@@ -1,0 +1,149 @@
+.page { padding: 28px; }
+
+.page__title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-heading);
+  margin: 0 0 20px;
+}
+
+/* Toggle card */
+.toggle-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  max-width: 616px;
+  padding: 5px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 19px;
+  border-bottom: 1px solid var(--color-bg);
+  min-height: 52px;
+}
+
+.toggle-row:last-child { border-bottom: none; }
+
+.toggle-row__label {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-label);
+}
+
+/* Custom toggle */
+.toggle {
+  position: relative;
+  width: 42px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.toggle input { display: none; }
+
+.toggle__track {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: var(--color-border-input);
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.toggle input:checked + .toggle__track {
+  background: var(--color-heading);
+}
+
+.toggle__knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: var(--shadow-toggle);
+  transition: left 0.2s;
+  pointer-events: none;
+}
+
+.toggle input:checked ~ .toggle__knob {
+  left: 21px;
+}
+
+/* Radio card */
+.radio-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  max-width: 616px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+
+.radio-card__title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-label);
+  margin-bottom: 14px;
+}
+
+.radio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  min-height: 31px;
+}
+
+.radio-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  border: 2px solid var(--color-border-input);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.15s;
+}
+
+.radio-circle--selected {
+  border-color: var(--color-heading);
+}
+
+.radio-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--color-heading);
+}
+
+.radio-option__label {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-label);
+}
+
+.btn-guardar {
+  background: var(--color-heading) !important;
+  color: #fff !important;
+  border-radius: var(--radius-base) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.52px !important;
+  height: 41.5px !important;
+  width: 126px !important;
+}

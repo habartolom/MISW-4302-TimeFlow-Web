@@ -6,7 +6,7 @@
     <h1 class="login-card__title">TIMEFLOW</h1>
     <p class="login-card__subtitle">Inicia sesión en tu cuenta</p>
 
-    <form class="login-card__form">
+    <form class="login-card__form" (ngSubmit)="onLogin()">
       <label class="field-label">Correo electrónico</label>
       <mat-form-field appearance="outline" class="login-card__field">
         <input matInput type="email" placeholder="usuario@correo.com" [(ngModel)]="email" name="email" />

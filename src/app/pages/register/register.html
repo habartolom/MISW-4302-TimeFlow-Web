@@ -6,7 +6,7 @@
     </div>
     <p class="register-card__subtitle">Crea tu cuenta nueva</p>
 
-    <form class="register-card__form">
+    <form class="register-card__form" (ngSubmit)="onRegister()">
       <label class="field-label">Nombre completo</label>
       <mat-form-field appearance="outline" class="register-card__field">
         <input matInput [(ngModel)]="nombre" name="nombre" />

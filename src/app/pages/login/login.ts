@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -23,4 +23,10 @@ export class Login {
   email = '';
   password = '';
   hidePassword = true;
+
+  constructor(private router: Router) {}
+
+  onLogin() {
+    this.router.navigate(['/dashboard']);
+  }
 }

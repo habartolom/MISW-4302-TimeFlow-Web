@@ -1,58 +1,60 @@
 <div class="page">
-  <h1 class="page__title">Asignar Tiempo a Presentación</h1>
+  <div class="content">
+    <h1 class="page__title">Asignar Tiempo a Presentación</h1>
 
-  <div class="form-card">
-    <div class="left-panel">
-      <span class="field-label">Presentación</span>
-      <select class="presentation-select" [(ngModel)]="presentacion">
-        <option value="">Seleccionar...</option>
-        <option value="q4">Q4 Sales Review</option>
-        <option value="standup">Team Standup</option>
-        <option value="sprint">Sprint Review</option>
-        <option value="demo">Client Demo</option>
-      </select>
+    <div class="form-card">
+      <div class="left-panel">
+        <span class="field-label">Presentación</span>
+        <select class="presentation-select" [(ngModel)]="presentacion">
+          <option value="">Seleccionar...</option>
+          <option value="q4">Q4 Sales Review</option>
+          <option value="standup">Team Standup</option>
+          <option value="sprint">Sprint Review</option>
+          <option value="demo">Client Demo</option>
+        </select>
 
-      <div class="duration-label">Duración total</div>
-      <div class="duration-value">
-        {{ totalFormateado }}<span class="duration-unit">min</span>
+        <div class="duration-label">Duración total</div>
+        <div class="duration-value">
+          {{ totalFormateado }}<span class="duration-unit">min</span>
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <span class="secciones-label">Secciones</span>
+
+        @for (s of secciones; track s.nombre) {
+          <div class="seccion-row">
+            <span class="seccion-row__name">{{ s.nombre }}</span>
+            <input
+              class="seccion-row__input"
+              type="number"
+              [(ngModel)]="s.minutos"
+              [name]="s.nombre + '_min'"
+              min="0"
+            />
+            <span class="seccion-row__sep">:</span>
+            <input
+              class="seccion-row__input"
+              type="number"
+              [(ngModel)]="s.segundos"
+              [name]="s.nombre + '_seg'"
+              min="0"
+              max="59"
+            />
+          </div>
+        }
+
+        <div class="progress-wrap">
+          <div class="progress-track">
+            <div class="progress-fill" [style.width.%]="progressPct"></div>
+          </div>
+          <span class="progress-label">{{ totalFormateado }}/15 min</span>
+        </div>
       </div>
     </div>
 
-    <div class="right-panel">
-      <span class="secciones-label">Secciones</span>
-
-      @for (s of secciones; track s.nombre) {
-        <div class="seccion-row">
-          <span class="seccion-row__name">{{ s.nombre }}</span>
-          <input
-            class="seccion-row__input"
-            type="number"
-            [(ngModel)]="s.minutos"
-            [name]="s.nombre + '_min'"
-            min="0"
-          />
-          <span class="seccion-row__sep">:</span>
-          <input
-            class="seccion-row__input"
-            type="number"
-            [(ngModel)]="s.segundos"
-            [name]="s.nombre + '_seg'"
-            min="0"
-            max="59"
-          />
-        </div>
-      }
-
-      <div class="progress-wrap">
-        <div class="progress-track">
-          <div class="progress-fill" [style.width.%]="progressPct"></div>
-        </div>
-        <span class="progress-label">{{ totalFormateado }}/15 min</span>
-      </div>
+    <div class="form-footer">
+      <button mat-flat-button class="btn-guardar">GUARDAR</button>
     </div>
-  </div>
-
-  <div class="form-footer">
-    <button mat-flat-button class="btn-guardar">GUARDAR</button>
   </div>
 </div>

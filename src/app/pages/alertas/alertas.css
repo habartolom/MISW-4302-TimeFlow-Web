@@ -1,4 +1,11 @@
-.page { padding: 28px; }
+.page {
+  padding: 28px;
+}
+
+.content {
+  max-width: 616px;
+  margin: 0 auto;
+}
 
 .page__title {
   font-size: 24px;
@@ -7,15 +14,13 @@
   margin: 0 0 20px;
 }
 
-/* Toggle card */
 .toggle-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
-  max-width: 616px;
-  padding: 5px;
-  margin-bottom: 16px;
+  padding: 5px 1px 1px;
+  margin-bottom: 20px;
   overflow: hidden;
 }
 
@@ -23,9 +28,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 14px 19px;
+  padding: 0 19px;
   border-bottom: 1px solid var(--color-bg);
-  min-height: 52px;
+  min-height: 53px;
 }
 
 .toggle-row:last-child { border-bottom: none; }
@@ -36,7 +41,6 @@
   color: var(--color-label);
 }
 
-/* Custom toggle */
 .toggle {
   position: relative;
   width: 42px;
@@ -76,15 +80,13 @@
   left: 21px;
 }
 
-/* Radio card */
 .radio-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
-  max-width: 616px;
-  padding: 20px 24px;
-  margin-bottom: 24px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .radio-card__title {
@@ -97,7 +99,6 @@
 .radio-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
 .radio-option {

@@ -1,34 +1,36 @@
 <div class="page">
-  <h1 class="page__title">Configuración de Alertas</h1>
+  <div class="content">
+    <h1 class="page__title">Configuración de Alertas</h1>
 
-  <div class="toggle-card">
-    @for (t of toggles; track t.label) {
-      <div class="toggle-row">
-        <span class="toggle-row__label">{{ t.label }}</span>
-        <label class="toggle">
-          <input type="checkbox" [(ngModel)]="t.enabled" [name]="t.label" />
-          <div class="toggle__track"></div>
-          <div class="toggle__knob"></div>
-        </label>
-      </div>
-    }
-  </div>
-
-  <div class="radio-card">
-    <div class="radio-card__title">Tipo de alerta por defecto:</div>
-    <div class="radio-list">
-      @for (op of tipoOpciones; track op.value) {
-        <label class="radio-option" (click)="tipoAlerta = op.value">
-          <div class="radio-circle" [class.radio-circle--selected]="tipoAlerta === op.value">
-            @if (tipoAlerta === op.value) {
-              <div class="radio-dot"></div>
-            }
-          </div>
-          <span class="radio-option__label">{{ op.label }}</span>
-        </label>
+    <div class="toggle-card">
+      @for (t of toggles; track t.label) {
+        <div class="toggle-row">
+          <span class="toggle-row__label">{{ t.label }}</span>
+          <label class="toggle">
+            <input type="checkbox" [(ngModel)]="t.enabled" [name]="t.label" />
+            <div class="toggle__track"></div>
+            <div class="toggle__knob"></div>
+          </label>
+        </div>
       }
     </div>
-  </div>
 
-  <button mat-flat-button class="btn-guardar">GUARDAR</button>
+    <div class="radio-card">
+      <div class="radio-card__title">Tipo de alerta por defecto:</div>
+      <div class="radio-list">
+        @for (op of tipoOpciones; track op.value) {
+          <label class="radio-option" (click)="tipoAlerta = op.value">
+            <div class="radio-circle" [class.radio-circle--selected]="tipoAlerta === op.value">
+              @if (tipoAlerta === op.value) {
+                <div class="radio-dot"></div>
+              }
+            </div>
+            <span class="radio-option__label">{{ op.label }}</span>
+          </label>
+        }
+      </div>
+    </div>
+
+    <button mat-flat-button class="btn-guardar">GUARDAR</button>
+  </div>
 </div>

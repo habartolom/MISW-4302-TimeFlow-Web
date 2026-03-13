@@ -6,11 +6,19 @@
 
   <div class="filters">
     <input class="filter-input" placeholder="Buscar..." [(ngModel)]="search" />
-    <select class="filter-select" [(ngModel)]="dateFilter">
-      <option value="">Fecha</option>
-      <option value="feb">Febrero</option>
-      <option value="ene">Enero</option>
-    </select>
+
+    <div class="filter-date-wrap" (click)="picker.open()">
+      <span class="filter-date__label" [class.filter-date__label--filled]="selectedDate">
+        {{ selectedDate ? (selectedDate | date:'d MMM') : 'Fecha' }}
+      </span>
+      <svg class="filter-chevron" width="10" height="6" viewBox="0 0 10 6" fill="none">
+        <path d="M1 1L5 5L9 1" stroke="#374151" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <!-- Input oculto requerido por MatDatepicker para posicionamiento -->
+      <input [matDatepicker]="picker" [(ngModel)]="selectedDate" class="filter-date-input" readonly />
+      <mat-datepicker #picker></mat-datepicker>
+    </div>
+
     <select class="filter-select" [(ngModel)]="statusFilter">
       <option value="">Estado</option>
       <option value="a-tiempo">A tiempo</option>

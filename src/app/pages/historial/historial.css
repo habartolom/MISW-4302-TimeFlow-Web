@@ -1,10 +1,14 @@
-.page { padding: 28px; }
+.page {
+  padding: 28px;
+  max-width: 1192px;
+  margin: 0 auto;
+}
 
 .page__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .page__title {
@@ -30,12 +34,12 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .filter-input {
   width: 180px;
-  height: 35.5px;
+  height: 36px;
   background: var(--color-surface);
   border: 1px solid var(--color-border-input);
   border-radius: var(--radius-base);
@@ -45,10 +49,56 @@
   color: var(--color-label);
   font-family: 'Inter', sans-serif;
   outline: none;
+  box-sizing: border-box;
 }
 
 .filter-input::placeholder { color: var(--color-label); }
 .filter-input:focus { border-color: var(--color-heading); }
+
+/* Date picker wrapper — styled to match filter-select */
+.filter-date-wrap {
+  position: relative;
+  width: 113px;
+  height: 36px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-base);
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.filter-date__label {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-label);
+  pointer-events: none;
+  user-select: none;
+}
+
+.filter-date__label--filled {
+  color: var(--color-heading);
+}
+
+.filter-chevron {
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Hidden input that mat-datepicker connects to */
+.filter-date-input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+  border: none;
+  padding: 0;
+}
 
 .filter-select {
   width: 113px;
@@ -67,6 +117,7 @@
   background-repeat: no-repeat;
   background-position: right 10px center;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 /* Table */
@@ -76,7 +127,7 @@
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
   overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .data-table { width: 100%; border-collapse: collapse; }
@@ -134,10 +185,11 @@
   line-height: 1 !important;
 }
 
-/* Pagination */
+/* Pagination — centered */
 .pagination {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
 }
 

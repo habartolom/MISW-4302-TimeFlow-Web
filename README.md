@@ -12,6 +12,15 @@ La aplicación está publicada en GitHub Pages:
 
 ---
 
+## Equipo de trabajo
+
+| Integrante | GitHub | Correo Uniandes |
+|---|---|---|
+| Harold Andres Bartolo Moscoso | [habartolom](https://github.com/habartolom) | h.bartolo@uniandes.edu.co |
+| Sergio Fernando Barrera Molano | [sfbarrera](https://github.com/sfbarrera) | sf.barreram1@uniandes.edu.co |
+
+---
+
 ## Rutas disponibles
 
 | Ruta | Vista | Descripción |

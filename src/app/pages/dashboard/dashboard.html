@@ -4,7 +4,6 @@
     <span class="page__meta">Últimos 30 días</span>
   </div>
 
-  <!-- Stats -->
   <div class="stats-row">
     @for (stat of stats; track stat.label) {
       <div class="stat-card">
@@ -14,44 +13,29 @@
     }
   </div>
 
-  <!-- Row 1: Evolución + Sesiones Recientes -->
   <div class="charts-row charts-row--main">
     <div class="chart-card">
       <p class="chart-card__title">Evolución temporal</p>
-      <!--
-        SVG viewBox: 750 x 160
-        Plot area: x=36..750, y=8..128  (92px tall = 60 units → 1unit = 1.53px)
-        Y=0  → y=128, Y=15 → y=105, Y=30 → y=82, Y=45 → y=59, Y=60 → y=36 (≈8+28)
-      -->
+      <!-- SVG: viewBox 750×160, plot area x=36..750 y=8..128 (120px = 60 units, 2px/unit) -->
       <svg viewBox="0 0 750 160" class="chart-svg-full">
-        <!-- Y-axis line -->
         <line x1="36" y1="8" x2="36" y2="128" stroke="#e5e7eb" stroke-width="1"/>
-        <!-- X-axis line -->
         <line x1="36" y1="128" x2="750" y2="128" stroke="#e5e7eb" stroke-width="1"/>
-        <!-- Horizontal grid lines + Y labels -->
-        <!-- Plot area: y=8 (Y=60) to y=128 (Y=0) = 120px / 4 intervals = 30px each -->
-        <!-- y=60 -->
-        <line x1="36" y1="8"   x2="750" y2="8"   stroke="#f3f4f6" stroke-width="1"/>
+
+        <line x1="36" y1="8"  x2="750" y2="8"  stroke="#f3f4f6" stroke-width="1"/>
         <text x="28" y="12"  text-anchor="end" font-size="9" fill="#9ca3af">60</text>
-        <!-- y=45 -->
-        <line x1="36" y1="38"  x2="750" y2="38"  stroke="#f3f4f6" stroke-width="1"/>
+        <line x1="36" y1="38" x2="750" y2="38" stroke="#f3f4f6" stroke-width="1"/>
         <text x="28" y="42"  text-anchor="end" font-size="9" fill="#9ca3af">45</text>
-        <!-- y=30 -->
-        <line x1="36" y1="68"  x2="750" y2="68"  stroke="#f3f4f6" stroke-width="1"/>
+        <line x1="36" y1="68" x2="750" y2="68" stroke="#f3f4f6" stroke-width="1"/>
         <text x="28" y="72"  text-anchor="end" font-size="9" fill="#9ca3af">30</text>
-        <!-- y=15 -->
-        <line x1="36" y1="98"  x2="750" y2="98"  stroke="#f3f4f6" stroke-width="1"/>
+        <line x1="36" y1="98" x2="750" y2="98" stroke="#f3f4f6" stroke-width="1"/>
         <text x="28" y="102" text-anchor="end" font-size="9" fill="#9ca3af">15</text>
-        <!-- y=0 label -->
         <text x="28" y="131" text-anchor="end" font-size="9" fill="#9ca3af">0</text>
 
-        <!-- Data line: peak around 10 Feb -->
         <polyline
           points="36,105  89,103  142,100  195,101  248,100  301,99  354,98  407,70  460,64  513,82  566,91  619,97  672,96  750,99"
           fill="none" stroke="#111827" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"
         />
 
-        <!-- X-axis labels -->
         <text x="36"  y="143" text-anchor="middle" font-size="8.5" fill="#9ca3af">18 Ene</text>
         <text x="89"  y="143" text-anchor="middle" font-size="8.5" fill="#9ca3af">20 Ene</text>
         <text x="142" y="143" text-anchor="middle" font-size="8.5" fill="#9ca3af">22 Ene</text>
@@ -87,40 +71,25 @@
     </div>
   </div>
 
-  <!-- Row 2: Distribución + Comparativa -->
   <div class="charts-row charts-row--bottom">
     <div class="chart-card">
       <p class="chart-card__title">Distribución por sección</p>
-      <!--
-        SVG viewBox: 500 x 150
-        Plot area: x=36..500, y=8..110 (102px = 60 units → 1u=1.7px)
-        Y=0→y=110, Y=30→y=59, Y=60→y=8
-        Bars: 4 cols, each ~90px wide, gap ~20px
-        Intro(20min)→h=34, Contenido(48min)→h=81, Q&A(15min)→h=25, Cierre(12min)→h=20
-      -->
+      <!-- SVG: viewBox 500×150, plot area x=36..500 y=8..110 (102px = 60 units, 1.7px/unit) -->
       <svg viewBox="0 0 500 150" class="chart-svg-full">
-        <!-- Y axis line -->
         <line x1="36" y1="8" x2="36" y2="110" stroke="#e5e7eb" stroke-width="1"/>
-        <!-- X axis line -->
         <line x1="36" y1="110" x2="500" y2="110" stroke="#e5e7eb" stroke-width="1"/>
-        <!-- Grid + Y labels -->
+
         <line x1="36" y1="8"  x2="500" y2="8"  stroke="#f3f4f6" stroke-width="1"/>
         <text x="28" y="12"  text-anchor="end" font-size="9" fill="#9ca3af">60</text>
         <line x1="36" y1="59" x2="500" y2="59" stroke="#f3f4f6" stroke-width="1"/>
         <text x="28" y="63"  text-anchor="end" font-size="9" fill="#9ca3af">30</text>
         <text x="28" y="113" text-anchor="end" font-size="9" fill="#9ca3af">0</text>
 
-        <!-- Bars: x positions centered in 4 equal sections of (500-36)=464px → each 116px -->
-        <!-- Intro: x=36+10=46, width=76, h=34, y=110-34=76 -->
         <rect x="56"  y="76"  width="76" height="34" fill="#111827" rx="2"/>
-        <!-- Contenido: x=36+116+10=162, width=76, h=81, y=29 -->
         <rect x="172" y="29"  width="76" height="81" fill="#111827" rx="2"/>
-        <!-- Q&A: x=36+232+10=278, width=76, h=25, y=85 -->
         <rect x="288" y="85"  width="76" height="25" fill="#111827" rx="2"/>
-        <!-- Cierre: x=36+348+10=394, width=76, h=20, y=90 -->
         <rect x="404" y="90"  width="76" height="20" fill="#111827" rx="2"/>
 
-        <!-- X labels -->
         <text x="94"  y="125" text-anchor="middle" font-size="9" fill="#9ca3af">Intro</text>
         <text x="210" y="125" text-anchor="middle" font-size="9" fill="#9ca3af">Contenido</text>
         <text x="326" y="125" text-anchor="middle" font-size="9" fill="#9ca3af">Q&amp;A</text>

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 interface Session {
   name: string;
@@ -12,13 +15,13 @@ interface Session {
 
 @Component({
   selector: 'app-historial',
-  imports: [FormsModule, MatButtonModule],
+  imports: [FormsModule, ReactiveFormsModule, DatePipe, MatButtonModule, MatDatepickerModule, MatNativeDateModule],
   templateUrl: './historial.html',
   styleUrl: './historial.css',
 })
 export class Historial {
   search = '';
-  dateFilter = '';
+  selectedDate: Date | null = null;
   statusFilter = '';
 
   sessions: Session[] = [

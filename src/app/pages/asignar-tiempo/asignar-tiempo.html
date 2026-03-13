@@ -2,10 +2,15 @@
   <h1 class="page__title">Asignar Tiempo a Presentación</h1>
 
   <div class="form-card">
-    <!-- Left panel -->
     <div class="left-panel">
       <span class="field-label">Presentación</span>
-      <input class="presentation-select" [(ngModel)]="presentacion" placeholder="" />
+      <select class="presentation-select" [(ngModel)]="presentacion">
+        <option value="">Seleccionar...</option>
+        <option value="q4">Q4 Sales Review</option>
+        <option value="standup">Team Standup</option>
+        <option value="sprint">Sprint Review</option>
+        <option value="demo">Client Demo</option>
+      </select>
 
       <div class="duration-label">Duración total</div>
       <div class="duration-value">
@@ -13,7 +18,6 @@
       </div>
     </div>
 
-    <!-- Right panel -->
     <div class="right-panel">
       <span class="secciones-label">Secciones</span>
 

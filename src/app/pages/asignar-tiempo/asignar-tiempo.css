@@ -1,4 +1,8 @@
-.page { padding: 28px; }
+.page {
+  padding: 28px;
+  max-width: 1192px;
+  margin: 0 auto;
+}
 
 .page__title {
   font-size: 24px;
@@ -12,15 +16,15 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
-  padding: 25px 25px 0 25px;
+  padding: 25px;
+  padding-bottom: 1px;
   max-width: 860px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 40px;
-  margin-bottom: 0;
+  grid-template-columns: 240px 1fr;
+  gap: 96px;
 }
 
-/* Left panel */
 .left-panel {
   display: flex;
   flex-direction: column;
@@ -47,6 +51,11 @@
   font-family: 'Inter', sans-serif;
   outline: none;
   margin-bottom: 20px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23374151' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  cursor: pointer;
 }
 
 .duration-label {
@@ -71,7 +80,6 @@
   margin-left: 4px;
 }
 
-/* Right panel */
 .right-panel {
   display: flex;
   flex-direction: column;
@@ -87,7 +95,7 @@
 .seccion-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   border-bottom: 1px solid var(--color-bg);
   padding: 10px 0;
   min-height: 56px;
@@ -116,12 +124,11 @@
 }
 
 .seccion-row__sep {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--color-label);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-muted);
 }
 
-/* Progress bar */
 .progress-wrap {
   display: flex;
   align-items: center;
@@ -133,14 +140,14 @@
   flex: 1;
   height: 6px;
   background: var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: 3px;
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
   background: var(--color-label);
-  border-radius: var(--radius-md);
+  border-radius: 3px;
   transition: width 0.2s;
 }
 
@@ -151,11 +158,11 @@
   white-space: nowrap;
 }
 
-/* Footer */
 .form-footer {
   border-top: 1px solid var(--color-bg);
   padding: 21px 0 25px;
   max-width: 860px;
+  margin: 0 auto;
 }
 
 .btn-guardar {
